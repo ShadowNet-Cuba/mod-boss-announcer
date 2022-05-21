@@ -30,7 +30,7 @@ public:
     {
         if (BossAnnouncerEnable)
         {
-            if (boss->GetMap()->IsRaid() && boss->getLevel() > 80 && boss->IsDungeonBoss())
+            if (boss->GetMap()->IsRaid() && boss->getLevel() > 60 && boss->IsDungeonBoss())
             {
                 //lets get the info we want
                 Map* map = player->GetMap();
@@ -107,7 +107,7 @@ public:
                         g_name = player->GetGuildName();
                 }
 
-                stream << "|CFF" << tag_colour << "|r|cff" << plr_colour << " " << p_name << "|r's Guild |cff" << guild_colour << "" << g_name << "|r has slain |CFF" << boss_colour << "[" << boss_name << "]|r with remaining |cff" << alive_text << "" << Alive_players << " /" << IsNormal << "|r players alive on " << IsHeroicMode << " mode, possible group |cff" << tag_colour << "Tank: " << Tanks  <<"|r |cff" << guild_colour <<
+                stream << "|CFF" << tag_colour << "|r|cff" << plr_colour << " " << p_name << "|r de la Hermandad |cff" << guild_colour << "" << g_name << "|r ha matado a |CFF" << boss_colour << "[" << boss_name << "]|r con |cff" << alive_text << "" << Alive_players << " /" << IsNormal << "|r jugadores restantes vivos en modo " << IsHeroicMode << ". Posible Grupo |cff" << tag_colour << "Tank: " << Tanks  <<"|r |cff" << guild_colour <<
                     " Healers: "<< Healers << "|r |cff" << boss_colour << " DPS: " << DPS << "|r";
                 sWorld->SendServerMessage(SERVER_MSG_STRING, stream.str().c_str());
 
